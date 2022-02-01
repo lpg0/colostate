@@ -9,7 +9,7 @@ int main( int argc, char *argv[] )  {
       n = 5;
       srand((unsigned) atoi(argv[1]));
       printf("[Starter]: With seed: %d\n", atoi(argv[1]));
-      printf("[Starter]: Running ratio: %d\n", get_running_ratio());
+      printf("[Starter]: Running ratio: %8.6f\n", get_running_ratio());
    }
    else if( argc > 2 ) {
       printf("Too many arguments supplied.\n");

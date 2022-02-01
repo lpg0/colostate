@@ -46,16 +46,16 @@ float get_running_ratio()
       }
       primeCount = get_prime_count(arrayPointer, arraySize);
       nonPrimeCount = arraySize - primeCount;
-      primeRatio = primeCount/nonPrimeCount;
+      primeRatio = ((float)primeCount)/((float)nonPrimeCount);
       if (primeCount > maxPrimeCount) {
          maxPrimeCount = primeCount;
-         maxCountIteration = j;
-         averagePrimeRatio += primeRatio;
-      }
+         maxCountIteration = j + 1;
+      }      
+      averagePrimeRatio += primeRatio;
       free(arrayPointer);
    }
    printf("[Executor]: Number of iterations is: %d\n", allocIterations);
    printf("[Executor]: Iteration with maximum prime count is %d\n", maxCountIteration);
-   averagePrimeRatio = averagePrimeRatio/allocIterations;
-   return averagePrimeRatio;
+   float avR = ((float)averagePrimeRatio)/((float)allocIterations);
+   return avR;
 }
