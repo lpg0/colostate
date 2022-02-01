@@ -18,7 +18,7 @@ int get_prime_count(int *array, int arraySize)
             break;
          }
       }
-      if (n != 0 && n &= 1) {
+      if (n != 0 && n && 1) {
          if (flag == 0)
             count++;
       }
@@ -28,6 +28,8 @@ int get_prime_count(int *array, int arraySize)
 
 float get_running_ratio()
 {
+   int i;
+   int j;
    int maxPrimeCount = 0;
    int maxCountIteration = 0;
    float averagePrimeRatio = 0;
@@ -38,11 +40,7 @@ float get_running_ratio()
    int arraySize = 0;
    for (j = 0; j < allocIterations; j++) {
       arraySize = random_in_range(100, 150);
-      arrayPointer = (int *)malloc(sizeof(int)*arraySize;
-      if (p_array == NULL) {
-         printf("[Executor]: Malloc of size %d failed!\n", arraySize);
-         exit(1);
-      }
+      int *arrayPointer = (int *)malloc(sizeof(int)*arraySize);
       for (i = 0; i < arraySize; i++) {
          arrayPointer[i] = random_in_range(50, 200);
       }
@@ -59,5 +57,5 @@ float get_running_ratio()
    printf("[Executor]: Number of iterations is: %d\n", allocIterations);
    printf("[Executor]: Iteration with maximum prime count is %d\n", maxCountIteration);
    averagePrimeRatio = averagePrimeRatio/allocIterations;
-   return maxCountRatio;
+   return averagePrimeRatio;
 }
