@@ -5,13 +5,11 @@
 int main( int argc, char *argv[] )  {
 
    if( argc == 2 ) {
-      printf("The argument supplied is %s\n", argv[1]);
       int i, n;
       n = 5;
       srand((unsigned) atoi(argv[1]));
-      for(i = 0; i < n; i++) {
-         printf("%d\n", rand() % 50);
-      }
+      printf("[Starter]: With seed: %d\n", atoi(argv[1]));
+      printf("[Starter]: Running ratio: %d\n", get_running_ratio());
    }
    else if( argc > 2 ) {
       printf("Too many arguments supplied.\n");
