@@ -1,5 +1,5 @@
-a: Executor.c Starter.c
-	gcc -o a Executor.c Starter.c
+Starter:
+	gcc -o Starter Executor.c Starter.c
 
 clean:
-	rm -f a.o
+	rm -f Starter.o
